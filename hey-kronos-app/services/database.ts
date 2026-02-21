@@ -1,9 +1,8 @@
 import * as SQLite from 'expo-sqlite';
 
 const DB_NAME = 'kronos.db';
-const DB_VERSION = 1;
 
-export async function initDatabase() {
+export async function initDatabase(): Promise<SQLite.SQLiteDatabase> {
   const db = await SQLite.openDatabaseAsync(DB_NAME);
 
   await db.execAsync(`
@@ -138,7 +137,7 @@ export async function initDatabase() {
 // Export database instance
 let dbInstance: SQLite.SQLiteDatabase | null = null;
 
-export async function getDatabase() {
+export async function getDatabase(): Promise<SQLite.SQLiteDatabase> {
   if (!dbInstance) {
     dbInstance = await initDatabase();
   }

@@ -1,5 +1,13 @@
 // Core Types
-export type TimeblockColor = 'blue' | 'green' | 'red' | 'purple' | 'yellow' | 'orange' | 'pink' | 'teal';
+export type TimeblockColor =
+  | 'blue'
+  | 'green'
+  | 'red'
+  | 'purple'
+  | 'yellow'
+  | 'orange'
+  | 'pink'
+  | 'teal';
 
 export interface Category {
   id: string;
@@ -42,6 +50,57 @@ export interface UserPreferences {
   updatedAt: Date;
 }
 
+// AI Coaching Domain Types
+export interface Goal {
+  id: string;
+  title: string;
+  description: string;
+  targetDate: string;
+  status: 'active' | 'completed' | 'abandoned';
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Milestone {
+  id: string;
+  goalId: string;
+  title: string;
+  completed: boolean;
+  dueDate: string;
+  order: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface CheckIn {
+  id: string;
+  goalId: string | null;
+  userMessage: string;
+  aiResponse: string;
+  confrontational: boolean;
+  sentiment: 'positive' | 'neutral' | 'confrontational';
+  screentimeHours: number | null;
+  timeblockCompletionRate: number | null;
+  todoCompletionRate: number | null;
+  goalsOnTrack: number | null;
+  createdAt: Date;
+}
+
+export interface AIConversation {
+  id: string;
+  context: 'goal_setting' | 'check_in' | 'confrontation' | 'planning' | 'general';
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface AIMessage {
+  id: string;
+  conversationId: string;
+  role: 'user' | 'assistant';
+  content: string;
+  timestamp: Date;
+}
+
 // Database Row Types (snake_case from SQLite)
 export interface CategoryRow {
   id: string;
@@ -72,4 +131,54 @@ export interface TodoRow {
   order_index: number;
   created_at: string;
   updated_at: string;
+}
+
+export interface GoalRow {
+  id: string;
+  title: string;
+  description: string;
+  target_date: string;
+  status: 'active' | 'completed' | 'abandoned';
+  created_at: string;
+  updated_at: string;
+}
+
+export interface MilestoneRow {
+  id: string;
+  goal_id: string;
+  title: string;
+  completed: number;
+  due_date: string;
+  order_index: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface CheckInRow {
+  id: string;
+  goal_id: string | null;
+  user_message: string;
+  ai_response: string;
+  confrontational: number;
+  sentiment: 'positive' | 'neutral' | 'confrontational';
+  screentime_hours: number | null;
+  timeblock_completion_rate: number | null;
+  todo_completion_rate: number | null;
+  goals_on_track: number | null;
+  created_at: string;
+}
+
+export interface AIConversationRow {
+  id: string;
+  context: 'goal_setting' | 'check_in' | 'confrontation' | 'planning' | 'general';
+  created_at: string;
+  updated_at: string;
+}
+
+export interface AIMessageRow {
+  id: string;
+  conversation_id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  timestamp: string;
 }

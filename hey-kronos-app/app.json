@@ -30,7 +30,7 @@
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/favicon.png"
-    }, 
+    },
     "plugins": [
       "expo-router",
       [
@@ -38,26 +38,17 @@
         {
           "enableFTS": true
         }
-      ],
-      [
-        "react-native-reanimated",
-        {
-          "relativeSourceLocation": true
-        }
       ]
     ],
     "experiments": {
       "typedRoutes": true
     },
-    "scheme": "kronos"
-  },
+    "scheme": "kronos",
+    "owner": "duckyfens-organization",
     "extra": {
       "eas": {
         "projectId": "21b10ab3-9b9c-4427-9181-fbbec78d9d66"
       }
-    },
-    "owner": "duckyfens-organization",
-    "plugins": [
-      "expo-router"
-    ]
+    }
   }
+}

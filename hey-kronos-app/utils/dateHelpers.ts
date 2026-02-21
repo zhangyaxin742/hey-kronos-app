@@ -1,4 +1,4 @@
-import { format, addDays, subDays, startOfDay, isSameDay, isToday } from 'date-fns';
+import { format, addDays, subDays } from 'date-fns';
 
 /**
  * Formats date to YYYY-MM-DD for database storage
@@ -46,7 +46,7 @@ export function calculateBlockHeight(durationMinutes: number, hourHeight: number
 export function snapToInterval(date: Date, intervalMinutes: number = 15): Date {
   const minutes = date.getMinutes();
   const snappedMinutes = Math.round(minutes / intervalMinutes) * intervalMinutes;
-  const newDate = new Date(date);
+  const newDate = new Date(date.getTime());
   newDate.setMinutes(snappedMinutes);
   newDate.setSeconds(0);
   newDate.setMilliseconds(0);

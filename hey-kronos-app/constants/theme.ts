@@ -14,7 +14,7 @@ export const colors = {
     800: '#262626',
     900: '#171717',
   },
-  
+
   // Timeblock Colors (Translucent)
   timeblock: {
     blue: 'rgba(59, 130, 246, 0.15)',
@@ -26,7 +26,7 @@ export const colors = {
     pink: 'rgba(236, 72, 153, 0.15)',
     teal: 'rgba(20, 184, 166, 0.15)',
   },
-  
+
   // Border Colors (More Opaque)
   timeblockBorder: {
     blue: 'rgba(59, 130, 246, 0.3)',
@@ -41,14 +41,53 @@ export const colors = {
 } as const;
 
 export const typography = {
-  h1: { fontSize: 32, fontWeight: '700' as const, lineHeight: 38, letterSpacing: -0.5, fontFamily: 'Inter-Bold' },
-  h2: { fontSize: 24, fontWeight: '600' as const, lineHeight: 30, letterSpacing: -0.3, fontFamily: 'Inter-SemiBold' },
-  h3: { fontSize: 18, fontWeight: '600' as const, lineHeight: 24, letterSpacing: -0.2, fontFamily: 'Inter-SemiBold' },
+  h1: {
+    fontSize: 32,
+    fontWeight: '700' as const,
+    lineHeight: 38,
+    letterSpacing: -0.5,
+    fontFamily: 'Inter-Bold',
+  },
+  h2: {
+    fontSize: 24,
+    fontWeight: '600' as const,
+    lineHeight: 30,
+    letterSpacing: -0.3,
+    fontFamily: 'Inter-SemiBold',
+  },
+  h3: {
+    fontSize: 18,
+    fontWeight: '600' as const,
+    lineHeight: 24,
+    letterSpacing: -0.2,
+    fontFamily: 'Inter-SemiBold',
+  },
   body: { fontSize: 16, fontWeight: '400' as const, lineHeight: 22, fontFamily: 'Inter-Regular' },
-  bodySmall: { fontSize: 14, fontWeight: '400' as const, lineHeight: 20, fontFamily: 'Inter-Regular' },
-  caption: { fontSize: 12, fontWeight: '400' as const, lineHeight: 16, fontFamily: 'Inter-Regular' },
-  timeLabel: { fontSize: 14, fontWeight: '500' as const, lineHeight: 18, fontFamily: 'Inter-Medium', color: colors.gray[500] },
-  timeblockTitle: { fontSize: 15, fontWeight: '600' as const, lineHeight: 20, fontFamily: 'Inter-SemiBold' },
+  bodySmall: {
+    fontSize: 14,
+    fontWeight: '400' as const,
+    lineHeight: 20,
+    fontFamily: 'Inter-Regular',
+  },
+  caption: {
+    fontSize: 12,
+    fontWeight: '400' as const,
+    lineHeight: 16,
+    fontFamily: 'Inter-Regular',
+  },
+  timeLabel: {
+    fontSize: 14,
+    fontWeight: '500' as const,
+    lineHeight: 18,
+    fontFamily: 'Inter-Medium',
+    color: colors.gray[500],
+  },
+  timeblockTitle: {
+    fontSize: 15,
+    fontWeight: '600' as const,
+    lineHeight: 20,
+    fontFamily: 'Inter-SemiBold',
+  },
 } as const;
 
 export const spacing = {

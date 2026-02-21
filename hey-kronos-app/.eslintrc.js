@@ -3,6 +3,7 @@ module.exports = {
     'expo',
     'prettier',
   ],
+  ignorePatterns: ['expo-env.d.ts'],
   plugins: ['prettier'],
   rules: {
     'prettier/prettier': 'error',
